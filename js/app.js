@@ -42,13 +42,13 @@ function mostrarAlerta(mensaje){
     }
 }
 
-function buscarImagenes(terminoBusqueda){
-    // const termino = document.querySelector('#termino').value; <--- esto es para que funcione la paginacion, en vez de en la 
+function buscarImagenes(){
+    const termino = document.querySelector('#termino').value; // <--- esto es para que funcione la paginacion, en vez de en la 
     //url terminoBusqueda, poner esta variable y en el parametro de esta funcion tiene que ir vacio, lo mismo en donde se llama
     //linea 44 y 23
     const key = '36665675-9e69f9dd604b54372dd7e4230';
     //Editamos esta URL con Template Strings https://pixabay.com/api/?key=36665675-9e69f9dd604b54372dd7e4230&q=yellow+flowers&image_type=photo
-    const url = `https://pixabay.com/api/?key=${key}&q=${terminoBusqueda}&per_page=${registrosPorPagina}&page=${paginaActual}`;
+    const url = `https://pixabay.com/api/?key=${key}&q=${termino}&per_page=${registrosPorPagina}&page=${paginaActual}`;
 
     //hits: cuantas quieres mostrar por pagina
     //total: cuantas imagenes en total en toda la base de datos hay
@@ -110,6 +110,8 @@ function mostrarImagenes(imagenes){
     }
     //Generamos el (nuevo) HTML
     imprimirPaginador();
+    //Vamonos hacia arriba cuando cambiamos de pagina
+    window.scrollTo(0,0);
 }
 
 function calcularPaginas(total){
@@ -134,6 +136,7 @@ function imprimirPaginador(){
         const boton = document.createElement('button');
         boton.href="#"; //no va a llevar a ningun lado
         boton.dataset.pagina = value; //se crea como atributo en el boton data-pagina=${value} ira aumentando de uno en uno por el generador
+        //Osease el value va del 1 hasta n cantidad de numeros
         boton.textContent = value; //1,2,3,4 y asi debido al generador
         boton.classList.add('siguiente', 'bg-yellow-200', 'px-4', 'py1', 'mr-2', 'font-bold', 'mb-3', 'uppercase', 'rounded', 'mt-10');
         console.log(boton);
