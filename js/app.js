@@ -80,7 +80,7 @@ function mostrarImagenes(imagenes){
         //el operador ADICION, por cada vuelta de ciclo añadira el bloque de codigo a cada imagen que se ejecuta
         //aqui usamos directamente el contenedor resultado, sin intermediarios para mas abajo no usar appendChild 
         resultado.innerHTML += `
-        <div class="card w-1/2 md: w-1/3 lg:w-1/4 p-3 mb-4">
+        <div class="card md: w-1/3 lg:w-1/4 p-3 mb-4">
             <div class="bg-white card__container">
                 <img class="w-full card__img" src="${previewURL}">
 
