@@ -1,0 +1,42 @@
+body {
+  background: #2C3E50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+}
+ 
+.card {
+  width: 15rem;
+  height: 16.7rem;
+  margin: 1.5rem 0;
+}
+ 
+.card__mask {
+  overflow: hidden;
+}
+ 
+.card__img:hover {
+  transform: perspective(10rem) scale(1.2);
+}
+ 
+.card__container {
+  background-color: rgb(23 23 23);
+}
+ 
+.card__link {
+  display: block;
+  text-align: center;
+  background-color: white;
+}
+ 
+.card__link:hover {
+  opacity: 0.8;
+}
